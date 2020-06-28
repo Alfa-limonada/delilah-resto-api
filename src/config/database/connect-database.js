@@ -24,8 +24,6 @@ sequelize
   //   .catch((error) => {
   //       console.log(`No se ha podido sincronizar, error: ${error}`)
   //   });
-
-
   
 
     module.exports = sequelize;  
