@@ -1,6 +1,6 @@
 config = {
     port: 3000,
-    apiBaseUrl: "http://localhost:" + this.port + "/api/v1/",
+    apiBaseUrl: "http://localhost:3000/api/v1/", //porque no funciona this.port
     //aca iría jwtkey
     dbConfig: {
         database: "delilah_resto_api",
