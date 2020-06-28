@@ -1,0 +1,22 @@
+{
+  "name": "delilah-resto-api",
+  "version": "1.0.0",
+  "description": "Online plataform to make restaurant orders. Api REST",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/config/server.js",
+    "prod": "NODE_ENV=production nodemon config/server.js",
+    "init-database": "node src/config/database/init-database.js"
+  },
+  "author": "\"Maria Miranda\"",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
