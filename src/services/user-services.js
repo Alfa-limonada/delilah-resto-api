@@ -4,7 +4,7 @@ const sequelize = require("../config/database/connect-database");
 const {QueryTypes} = require('sequelize')
 const config = require("../config/environments/" + ENVIRONMENT).config;
 
-const apiBaseUrl = config.apiBaseUrl; //http://localhost:" + this.port + "/api/v1/
+const apiBaseUrl = config.apiBaseUrl;
 
 async function getAllUsers() {
   // devolver todos los usuarios de la base de datos 
@@ -16,7 +16,11 @@ async function getAllUsers() {
   }
 }
 
-async function editUser(){}
+//getProducts
+
+//postUsers
+
+//postOrders
 
 
 module.exports = {

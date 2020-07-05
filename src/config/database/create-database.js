@@ -26,11 +26,11 @@ async function createTables() {
 );`
     );
 
-    connection.query( //falta la C
+    connection.query(
         `CREATE TABLE IF NOT EXISTS orders ( 
     order_id INT PRIMARY KEY NOT NULL,
     user_id INT NOT NULL, 
-    order_status VARCHAR(40) NOT NULL, 
+    order_status ENUM('new', 'confirmed', 'preparing', 'ready', 'delivered') DEFAULT 'new' NOT NULL, 
     order_description VARCHAR(200) NOT NULL,
     order_pay_method VARCHAR(200) NOT NULL, 
     order_price VARCHAR(40) NOT NULL,    
@@ -44,6 +44,7 @@ async function createTables() {
         `CREATE TABLE IF NOT EXISTS products (
     product_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     product_name VARCHAR(70) UNIQUE NOT NULL,
+    product_image VARCHAR(60) NOT NULL NOT NULL,
     product_price VARCHAR(40) NOT NULL, 
     product_stock INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

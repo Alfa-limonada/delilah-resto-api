@@ -16,6 +16,11 @@ async function getAllUsers(req, res) {
     }  
 }
 
+//userController.getProducts
+
+//userController.postUsers
+
+//userController.postOrders
 
 
 module.exports = {
