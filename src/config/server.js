@@ -10,6 +10,7 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(userRoutes);
 app.use(adminRoutes);
+
 app.listen(config.port, () => {
     console.log(`App running on port ${config.port}`)
 });

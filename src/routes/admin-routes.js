@@ -6,7 +6,9 @@ const apiBaseUrl = configDevelopment.config.apiBaseUrl; //http://localhost:" + t
 
 //Una ruta tiene dos parametros: el primero es la ruta y el segundo es el controlador sin ()
 
-//adminRoutes.post(`/api/v1/users`, adminController.postProducts)
+adminRoutes.get(`/api/v1/users`, adminController.getUsers);
+
+adminRoutes.post(`/api/v1/product`, adminController.postProduct);
 
 //adminRoutes.post(`/api/v1/users`, adminController.getProducts)
 
@@ -18,3 +20,5 @@ const apiBaseUrl = configDevelopment.config.apiBaseUrl; //http://localhost:" + t
 
 
 module.exports = adminRoutes
+
+

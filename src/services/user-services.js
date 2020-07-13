@@ -24,7 +24,6 @@ async function getAllUsers() {
 
 
 module.exports = {
-  getAllUsers,
-  editUser
+  getAllUsers, 
 }
 
