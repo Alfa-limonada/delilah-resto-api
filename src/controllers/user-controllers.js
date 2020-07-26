@@ -1,30 +1,61 @@
 
-const userService = require('../services/user-services');
+const userServices = require('../services/user-services');
 
-// Esto es un controlador: 
+//userController.postUser
+async function postUser(req, res) {
+  const userData = req.body;
+  // if (
+  //   !userData.user_name ||
+  //   !userData.user_email ||
+  //   !userData.user_full_name ||
+  //   !userData.user_phone ||
+  //   !userData.user_address ||
+  //   !userData.user_password ||
+  //   !userData.user_roll    
+  // ) {
+  //   res.status(400).json({ status: 400, message: "Bad request" });
+  //   //console.log(err);
+  // }
 
-async function getAllUsers(req, res) {
-    try { 
-        const users = await userService.getAllUsers();
-        res.status(200).json({
-            status: 200,
-            data: users,
-            message: "Succesfully users Retrieved"
-        })
-    } catch(err) {
-        res.status(400).json({ status: 400, message: "Users not retrieved" });
-    }  
+  try {
+    await userServices.postUser(userData); //aquí solo le paso el body
+    res.status(201).json({
+      status: 201,
+      message: "A new resource was successfully created"
+    });
+  } catch (err) {
+    res.status(400).json({ status: 400, message: "Bad request" });
+    console.log(err);
+  }
 }
 
-//userController.getProducts
 
-//userController.postUsers
+//userController.getProducts
+async function getProducts(req, res) {
+    try {
+      const products = await userServices.getProducts();
+      res.status(200).json({
+        status: 200,
+        data: products,
+        message: "Products retrieved succesfully"
+      });
+    } catch (err) {
+      res.status(400).json({ status: 400, message: "Products not retrieved" });
+    }
+  }
+
+
+
+
+
+
 
 //userController.postOrders
 
 
-module.exports = {
-  getAllUsers  
+module.exports = { 
+  postUser, 
+  getProducts  
 }
 
 

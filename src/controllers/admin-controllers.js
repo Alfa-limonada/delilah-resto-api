@@ -22,7 +22,7 @@ async function postProduct(req, res) {
     !productInfo.product_price ||
     !productInfo.product_stock
   ) {
-    res.status(400).json({ status: 400, message: "Bad requestt" });
+    res.status(400).json({ status: 400, message: "No funca" });
     console.log(err);
   }
 
